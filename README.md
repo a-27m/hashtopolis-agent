@@ -1,5 +1,7 @@
 # hashtopolis-agent
-containerized hashtopolis agent leveraging nvidia/opencl:devel16.04 base image
+Containerized hashtopolis agent leveraging nvidia/opencl:devel16.04 base image
 
-USAGE: docker run -b er0080/hashtopolis-agent --url [server url] --token [agent token]
-
+## Usage 
+```shell
+docker run er0080/hashtopolis-agent --url [server url] --token [agent token]
+```
