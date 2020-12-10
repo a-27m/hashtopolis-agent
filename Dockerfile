@@ -1,14 +1,17 @@
-FROM nvidia/opencl:devel-ubuntu16.04
+FROM nvidia/cuda:11.1-base-ubuntu18.04
+
+LABEL maintainer a-27m@users.noreply.github.com
 
 RUN apt update && apt install -y --no-install-recommends \
+  curl \
   pciutils \
-  git \
   python3 \
   python3-psutil \
-  python3-requests && \
-  git clone https://github.com/s3inlc/hashtopolis-agent-python.git
+  python3-requests
 
-WORKDIR hashtopolis-agent-python
+RUN mkdir /hashtopolis-agent-python
+WORKDIR /hashtopolis-agent-python
 
-ENTRYPOINT ["python3", "__main__.py"]
+COPY	hashtopolis.zip 	/hashtopolis-agent-python
 
+ENTRYPOINT ["python3", "hashtopolis.zip"]
