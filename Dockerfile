@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.1-runtime-ubuntu18.04
+FROM nvidia/cuda:11.1-devel-ubuntu18.04
 
 LABEL maintainer a-27m@users.noreply.github.com
 
